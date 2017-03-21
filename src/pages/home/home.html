@@ -1,0 +1,28 @@
+<ion-header class="header">
+    <ion-navbar>
+        <ion-title>活动综述</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class=" cards-bg">
+    <ion-card *ngFor="let activity of Activities" class="cards">
+        <ion-card-header>
+            活动名称 ：{{activity.Name}}
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>年级</ion-col>
+                    <ion-col>班级</ion-col>
+                    <ion-col>姓名</ion-col>
+                    <ion-col>通过？</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let jion of activity.jions">
+                    <ion-col>{{jion.Grade}}</ion-col>
+                    <ion-col>{{jion.Class}}</ion-col>
+                    <ion-col>{{jion.Name}}</ion-col>
+                    <ion-col><ion-toggle color="energized" [checked]="jion.Status === '审核通过'"></ion-toggle></ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>登录</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input [(ngModel)]="username" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>选择类型</ion-label>
+            <ion-select [(ngModel)]="select">
+                <ion-option value="学生登陆">学生登录</ion-option>
+                <ion-option value="教师登陆">教师登录</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <div padding>
+        <button ion-button block (click)="login()">Login</button>
+    </div>
+</ion-content>
