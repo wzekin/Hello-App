@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      学分查询
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>年级&班级</ion-label>
+    <ion-select [(ngModel)]="selectGrade" (ionChange)="getClass()">
+      <ion-option value="初一">初一</ion-option>
+      <ion-option value="初二">初二</ion-option>
+      <ion-option value="初三">初三</ion-option>
+      <ion-option value="高一">高一</ion-option>
+      <ion-option value="高二">高二</ion-option>
+      <ion-option value="高三">高三</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="selectClass">
+      <ion-option *ngFor="let c of classes" [value]="c">{{c}}</ion-option>
+    </ion-select>
+    <button item-right ion-button (click)="getScore()">Go!</button>
+  </ion-item>
+  <ion-card *ngIf="score.length !== 0" class="cards">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngIf="isactive">班级</ion-col>
+          <ion-col *ngIf="!isactive">姓名</ion-col>
+          <ion-col>学分</ion-col>
+          <ion-col>参与次数</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let s of score">
+          <ion-col *ngIf="isactive">{{s.Class}}</ion-col>
+          <ion-col *ngIf="!isactive">{{s.Name}}</ion-col>
+          <ion-col>{{s.Score}}</ion-col>
+          <ion-col>{{s.Num}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

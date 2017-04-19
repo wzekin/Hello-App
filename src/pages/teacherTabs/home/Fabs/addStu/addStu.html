@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      添加学生
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>选择活动</ion-label>
+      <ion-select [(ngModel)]="select.activity">
+        <ion-option *ngFor="let a of activities" [value]="a.Id">{{a.Name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>年级</ion-label>
+      <ion-select [(ngModel)]="select.grade" (ionChange)="getClass()">
+        <ion-option value="初一">初一</ion-option>
+        <ion-option value="初二">初二</ion-option>
+        <ion-option value="初三">初三</ion-option>
+        <ion-option value="高一">高一</ion-option>
+        <ion-option value="高二">高二</ion-option>
+        <ion-option value="高三">高三</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>班级</ion-label>
+      <ion-select [(ngModel)]="select.classes" (ionChange)="getStudent()">
+        <ion-option *ngFor="let c of classes" [value]="c">{{c}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>姓名</ion-label>
+      <ion-select [(ngModel)]="select.student">
+        <ion-option *ngFor="let c of students" [value]="c.Id">{{c.Name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <button ion-button full (click)="AddStu()">确定</button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      结束活动
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>选择活动</ion-label>
+      <ion-select [(ngModel)]="activity.Id">
+        <ion-option *ngFor="let a of activities" [value]="a.Id">{{a.Name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>活动工时</ion-label>
+      <ion-input [(ngModel)]="activity.Score"></ion-input>
+    </ion-item>
+    <ion-item class="item-textarea">
+      <ion-label>活动感受</ion-label>
+      <ion-textarea [(ngModel)]="activity.Impression"></ion-textarea>
+    </ion-item>
+    <ion-item class="item-text-wrap">
+      <img class="button" *ngFor="let img of activity.ImagePath;let i=index" width="80" height="80" [src]="img" (click)="deletephoto(i)" />
+      <img class="button" (click)="presentActionSheet()" width="80" height="80"/>
+    </ion-item>
+    <button ion-button full (click)="EndActivity()">确定</button>
+  </ion-list>
+</ion-content>

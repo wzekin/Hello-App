@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{activity.Name}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card class="cards">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>年级</ion-col>
+          <ion-col>班级</ion-col>
+          <ion-col>姓名</ion-col>
+          <ion-col>是否通过</ion-col>
+        </ion-row>
+        <ion-row *ngFor="">
+          <ion-col>{{jion.Grade}}</ion-col>
+          <ion-col>{{jion.Class}}</ion-col>
+          <ion-col>{{jion.Name}}</ion-col>
+          <ion-col>{{jion.Status}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>活动感受</ion-card-header>
+    <ion-card-content>{{activity.Impression}}</ion-card-content>
+    <ion-card-content *ngIf="activity.ImagePath !== []">
+      <ion-img *ngFor="let img of activity.ImagePath" [src]="img"></ion-img>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

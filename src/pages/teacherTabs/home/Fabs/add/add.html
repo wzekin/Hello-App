@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      添加活动
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>活动名称</ion-label>
+      <ion-input [(ngModel)]="activity.Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>活动时间</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY"  [(ngModel)]="activity.Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>活动简介</ion-label>
+      <ion-textarea [(ngModel)]="activity.Introduction"></ion-textarea>
+    </ion-item>
+
+    <button ion-button full (click)="AddActivity()">确定</button>
+  </ion-list>
+</ion-content>

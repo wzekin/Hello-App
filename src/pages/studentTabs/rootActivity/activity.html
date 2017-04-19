@@ -1,0 +1,24 @@
+<ion-header class="header">
+  <ion-navbar>
+    <ion-title>团委活动</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class=" cards-bg">
+  <ion-card *ngFor="let a of activities">
+    <ion-item>
+      <br />
+      <h2>{{a.Name}}</h2>
+      <p>活动时间：{{a.Date}}</p>
+    </ion-item>
+    <ion-card-content>
+      {{a.Introduction}}
+    </ion-card-content>
+    <button ion-button full (click)="setJion(a.Id)">报名活动</button>
+  </ion-card>
+</ion-content>

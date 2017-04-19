@@ -1,0 +1,22 @@
+<ion-header class="header">
+  <ion-navbar>
+    <ion-title>活动综述</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class=" cards-bg">
+  <ion-list>
+    <ion-item *ngFor="let jion of jions">
+      <br />
+      <h2>时间：{{jion.Date}}</h2>
+      <h2>活动名称：{{jion.Name}}</h2>
+      <h2>发起人：{{jion.WhoBuild}}</h2>
+      <h2>状态：{{jion.Status}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

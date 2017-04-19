@@ -1,0 +1,35 @@
+<ion-header class="header">
+  <ion-navbar>
+    <ion-title>个人信息</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class=" cards-bg">
+  <ion-list inset>
+    <ion-item>
+      <h2 item-left>教育Id</h2>
+      <h2 item-right>{{student.Id}}</h2>
+    </ion-item>
+    <ion-item>
+      <h2 item-left>年级</h2>
+      <h2 item-right="">{{student.Grade}}</h2>
+    </ion-item>
+    <ion-item>
+      <h2 item-left>班级</h2>
+      <h2 item-right>{{student.Class}}</h2>
+    </ion-item>
+    <ion-item>
+      <h2 item-left>姓名</h2>
+      <h2 item-right>{{student.Name}}</h2>
+    </ion-item>
+    <ion-item>
+      <h2 item-left>性别</h2>
+      <h2 item-right>{{student.Gender}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
