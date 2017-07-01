@@ -69,7 +69,7 @@ export class EndPage {
     let options = {
       // Some common settings are 20, 50, and 100
       quality: 50,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      destinationType: this.camera.DestinationType.DATA_URL,
       // In this app, dynamically set the picture source, Camera or photo gallery
       sourceType:0,//0对应的值为PHOTOLIBRARY ，即打开相册
       encodingType: this.camera.EncodingType.JPEG,
